@@ -5,3 +5,8 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+window.lightGallery(document.getElementById('bootstrap-video-gallery'), {
+    // Optional thumbnail plugin
+    plugins: [lgThumbnail, lgVideo],
+});
