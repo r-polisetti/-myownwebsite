@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MSS</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- AOS Animations -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Google Font -->
+<link href="fonts/css/all.min.css" rel="stylesheet">
+<link href="fonts/webfonts/*" rel="stylesheet">
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      once: true,
+      duration: 1000,
+      offset: 100,
+    });
+  });
+</script>
+
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+
+<!-- Navbar -->
+<header class="fixed top-0 left-0 w-full bg-white/90 dark:bg-gray-800/90 shadow z-50 backdrop-blur" style="height: 64px;">
+  <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center h-full">
+    <!--<h1 class="text-xl font-bold">My Story</h1>-->
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex gap-6 text-sm font-medium">
+      <li><a href="#hero" class="hover:text-blue-500 dark:hover:text-blue-400">Home</a></li>
+       <li><a href="#contact" class="hover:text-blue-500 dark:hover:text-blue-400">Contact</a></li>
+      <li>
+        <button id="dark-toggle-desktop" class="transition text-lg hover:text-yellow-400" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <i class="fas fa-adjust"></i>
+        </button>
+      </li>
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <button
+      id="menu-toggle"
+      class="md:hidden focus:outline-none text-2xl"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg w-full absolute top-16 left-0 z-40">
+    <ul class="flex flex-col px-4 py-4 gap-4 text-sm font-medium">
+      <li><a href="#hero" class="block hover:text-blue-500 dark:hover:text-blue-400" onclick="document.getElementById('menu-toggle').click()">Home</a></li>
+      <li><a href="#story-1" class="block hover:text-blue-500 dark:hover:text-blue-400" onclick="document.getElementById('menu-toggle').click()">Story</a></li>
+      <li><a href="#contact" class="block hover:text-blue-500 dark:hover:text-blue-400" onclick="document.getElementById('menu-toggle').click()">Contact</a></li>
+      <li>
+        <button id="dark-toggle-mobile" class="transition text-lg hover:text-yellow-400 w-full text-left" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <i class="fas fa-adjust"></i> Toggle Dark Mode
+        </button>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="pt-16">
+
+  <!-- Hero Section -->
+  <section
+    id="hero"
+    class="relative h-screen bg-center bg-cover text-white flex flex-col items-center justify-center"
+    style="background-image: url('images/my/cover.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 text-center max-w-xl px-4">
+      <div class="mx-auto mb-6 w-32 h-32 rounded-full overflow-hidden border-4 border-white">
+        <img src="images/my/Profie-p.jpeg" alt="Profile" class="w-full h-full object-cover" />
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-bold">Hi, I'm Ravi Kiran Polisetti</h1>
+      <p class="mt-4 text-lg sm:text-2xl leading-relaxed">
+        💡 Technology Enthusiast, 📖 Forever Learner,<br />
+        🚶‍♂️ Always Moving Forward — One step, One idea At A Time.
+      </p>
+      <p class="mt-4 text-base sm:text-xl text-gray-300">
+        Thanks for checking out my corner of the web — scroll down to learn my story.
+      </p>
+    </div>
+
+    <a
+      href="#story-1"
+      class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-white hover:text-blue-400 transition"
+      aria-label="Scroll down to About Me section"
+    >
+      <i class="fas fa-chevron-down text-3xl animate-bounce"></i>
+    </a>
+  </section>
+
+  <!-- About Me Section -->
+  <section
+    id="story-1"
+    class="relative min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100"
+  >
+    <div class="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
+      <img
+        src="images/my/abme.jpeg"
+        alt="About Me"
+        class="w-full max-w-xs sm:max-w-sm md:max-w-md rounded-xl shadow-lg object-contain"
+        loading="lazy"
+      />
+    </div>
+    <div class="w-full md:w-1/2 text-center md:text-left max-w-xl">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">👋 About Me:</h2>
+      <div class="text-base sm:text-lg font-medium space-y-4 leading-relaxed">
+        <p>I’m a tech lover, a believer in open-source, and a quiet supporter of the freedom it stands for.</p>
+        <p>I’ve made a habit of learning at least one new thing every day — a thought, a truth.</p>
+        <p>I’m not the person you see now — I’m the one I shaped myself into, slowly, painfully, deliberately.</p>
+        <p>It wasn’t smooth. I’ve stumbled, fallen, and rebuilt — carving my way forward, one stone at a time.</p>
+        <p>This website isn’t just a page — it’s a bookmark in the journey. A place to pause, reflect, and remember how far I’ve come.</p>
+        <p>And I know — there’s still a long road ahead. But I’ll keep updating this space, as long as I keep growing.</p>
+        <p>If you're curious about the path I've walked — scroll down and take a look.</p>
+      </div>
+    </div>
+
+ <!--   <a
+      href="#story-2"
+      class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-gray-700 dark:text-gray-300 hover:text-blue-500 transition"
+      aria-label="Scroll down to Story section"
+    >
+      <i class="fas fa-chevron-down text-3xl animate-bounce"></i>
+    </a>
+  -->
+  </section>
+
+  <section id="story" class="relative bg-white dark:bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+        📖 My Story 
+      </h2>
+  
+      <!-- Accordion Timeline -->
+      <div class="space-y-6">
+  
+        <!-- Chapter 1 -->
+        <details class="group border-l-4 border-blue-500 pl-6 transition-all" open data-aos="fade-up">
+          <summary class="cursor-pointer text-2xl font-semibold text-blue-600 flex items-center justify-between">
+            <span>Just landed on 🌍 → A 90's Kid </span>
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </summary>
+  
+          <div class="mt-4 space-y-4 text-gray-700 dark:text-gray-300 text-base sm:text-lg">
+            <div class="flex gap-4 mb-4 flex-wrap">
+              <figure class="text-center">
+                <img src="gifs/edsonstorm-kick-buttowski.gif" class="w-80 rounded-lg object-cover shadow mx-auto" alt="Childhood photo">
+                <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400 italic">
+                  Kick Buttowski 😎 — My favorite cartoon growing up!
+                </figcaption>
+              </figure>              
+            </div>
+            <p>Yes, I was a 90s kid. Some call us millennials. Some call us the better generation.</p>
+            <p>But honestly? I think we were both lucky and unlucky at the same time. Confused?</p>
+            <p>Let me explain.</p>
+            <p>We were the generation that witnessed the real tech revolution — from landline phones to iPhones, from 1G to 5G, from 512kbps BSNL internet to actual broadband. Wild times.</p>
+            <p>Tech has always been a part of my life. I was lucky to get a computer at a very early age — back in school. And as an enthusiast, I did everything you can imagine… and even some things you <em>couldn’t</em> imagine 😅.</p>
+            <p>As a kid, I was always a tech lover. I installed every random piece of software I could find (even when I had no idea how it worked). I bricked my PC over a hundred times — literally!</p>
+            <p>Things started to shift when I figured out how to disassemble and reassemble my own PC. This was during school — when most kids wouldn’t even <em>touch</em> a computer, I was already opening it up like it was Lego. Somehow, I always knew I could do it. That belief was just wired into me.</p>
+            <blockquote class="border-l-4 border-blue-400 pl-4 italic text-gray-600 dark:text-gray-400">
+              “I still feel like tech was always my stronghold, even before anyone else saw it.”
+            </blockquote>
+            <p>My family noticed it when I fixed an OS issue that even a technician couldn’t solve 😎 That’s where it really began.</p>
+            <p>I was sharp at learning, but lazy when it came to writing notes. Never took notes — my friends carried 20+ notebooks to school. I carried one… filled with alien-looking sketches 🤣</p>
+            <p>One last thing I should mention: I was never pressured to chase ranks or marks. I can proudly say I was never a topper — at least not when I remember myself.</p>
+            <p>That’s all thanks to my father — who never asked me about grades. He always asked just one question:</p>
+            <p class="text-blue-500 font-semibold italic">“Pass? Or fail?”</p>
+            <p>I’d say “Pass.” He’d look at me like 😒 and go “hmm.”</p>
+            <p>Still never failed a class, by the way 😎</p>
+            <p>My childhood wasn’t always childish — but that’s another story. Let’s move on to the next chapter.</p>
+
+            <figure class="mt-6 w-full max-w-md mx-auto">
+              <img src="images/my/child.jpeg" class="rounded-xl shadow-lg w-full" alt="Old school tech memories" />
+              <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400 italic">
+                Yah, that's me — a 2-year-old. 😅
+              </figcaption>
+            </figure>      
+            </div>
+        </details>
+  
+        <!-- Chapter 2 -->
+        <details class="group border-l-4 border-blue-500 pl-6 transition-all" data-aos="fade-up">
+          <summary class="cursor-pointer text-2xl font-semibold text-blue-600 flex items-center justify-between">
+            <span>🎓 Teenage → College Life 🏃‍♂️</span>
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </summary>
+  
+          <div class="mt-4 space-y-4 text-gray-700 dark:text-gray-300 text-base sm:text-lg">
+            <div class="flex gap-4 mb-4 flex-wrap">
+              <figure class="text-center">
+                <img src="gifs/edsonstorm-kick-buttowski.gif" class="w-80 rounded-lg object-cover shadow mx-auto" alt="Childhood photo">
+                <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400 italic">
+                  Kick Buttowski 😎 — My favorite cartoon growing up!
+                </figcaption>
+              </figure>              
+            </div>
+            <p>Wokay... where to start...</p>
+
+                <p>While most of my friends followed what their parents and relatives told them — joining intermediate — I chose a different path. I enrolled in a Diploma in Information Technology (Polytechnic*) just to stay close to my dream: working in IT.</p>
+                <p>Of course, I lost many friends in that transition. I felt like an immigrant in my own world.</p>
+                <p>I was just an average student. Barely passing subjects — but never failing. And honestly, during those three years, I drifted a bit away from tech. Not completely, but enough to feel it.</p>
+                <p>Then things changed — scenes started getting colorful. I got to see what real technology looked like up close. Still didn’t make a lot of friends, but technology was a consistent companion.</p>
+                <p>To manage a bit of my expenses, I looked for a part-time job. That’s when photography entered my life.</p>
+                <p>During a semester break, I walked into a photo studio and asked if they had a job. 🤣 They did. They gave me a light to hold. That’s it. I thought I’d be handed a camera, but nope — just stand and hold light at the angle the videographer asked.</p>
+                <p><strong>100 rupees.</strong> That was my first salary. I was so happy. Bought a little something for mom and dad, and even went to a movie with my brother. In that moment, it felt like I had it all.</p>
+                <p>A couple events later, I got lucky — a photographer fell ill, and I was asked to step in. First time touching a DSLR (a Nikon 40D). I was nervous but excited.</p>
+                <p>Everyone else stuck to traditional photography: “Sir/Madam, look here.” But I was shy to call out, so I quietly moved around, clicking candids from behind. No awkward poses, just real moments.</p>
+                <p>Guess what my teammates said when they saw the photos?</p>
+                <blockquote class="border-l-4 border-blue-400 pl-4 italic text-gray-600 dark:text-gray-400">
+                  “You’ve wasted memory. These aren't even proper photos.” They almost deleted all of them — said they'd keep a few in case any important guests die later.
+                </blockquote>
+                <p>They didn’t pay me that day. I was expecting 200-300 rupees. I was crushed.</p>
+                <p>But then, something magical happened. The groom came to select photos for the album. Out of 150 images chosen — over 100 were mine. 😏</p>
+                <p>Since then, I became a favorite. From 100 rupees per event to 1500 per event in the coming years. I earned a lot. But…</p>
+                <p>...I lacked respect.</p>
+                <p>One event, in 2013, I sat down to eat. An elderly guest confronted me: “You can't eat with us. Eat after the event.”</p>
+                <p>I had tears in my eyes. That hit me hard. I completed the event but kept questioning everything. I realized something — “Dignity of labour” doesn’t really exist everywhere.</p>
+                <p>I followed my heart, but I couldn’t take that anymore. I quit photography.</p>
+                <p>I tried alternatives. Learned Photoshop, After Effects, and Premiere Pro — editing photos and videos. But something felt off. I wasn’t happy or comfortable.</p>
+                <p>Three years of college passed. And with that, I was given a break — a chance to rethink who I really wanted to be.</p>
+                <figure class="mt-6 w-full max-w-md mx-auto">
+                  <img src="images/my/dc.jpeg" class="rounded-xl shadow-lg w-full" alt="Old school tech memories" />
+                  <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400 italic">
+                    Hmm, this was me in 2013 during my Diploma collage time.
+                  </figcaption>
+                </figure>
+                
+            </div>
+          </details>
+ 
+        <!-- Chapter 3 
+        <details class="group border-l-4 border-blue-500 pl-6 transition-all" data-aos="fade-up">
+          <summary class="cursor-pointer text-2xl font-semibold text-blue-600 flex items-center justify-between">
+            <span>🚀 Career Launch</span>
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </summary>
+          <div class="mt-4 space-y-4 text-gray-700 dark:text-gray-300 text-base sm:text-lg"></div>
+            <div class="flex gap-4 mb-4 flex-wrap">
+              <img src="gifs/mr.gif" class="w-80 rounded-lg object-cover shadow" alt="College photo">
+            </div>
+          
+              <h2>Graduation &mdash; Beginning of the Battle 🚀</h2>
+
+              <p>Hayaah! 😅 Let me put it this way!</p>
+
+              <p>I was a weirdo when I entered because I wasn’t a regular guy. I mean, I came from a Diploma background, so I didn’t have to study 1st year &mdash; I was pushed directly into 2nd year. I was called "LE" (Lateral Entry) 🥲. I know it’s a weird tag, but I carried this name throughout my graduation.</p>
+
+              <p>On the joining day, everyone in the administrative office in our department was staring at me. I felt awkward. Even my HOD was shocked to see an LE in their department &mdash; because most of the LEs opt for CSE (Computer Science) over IT (Information Technology). The difference was hardly one subject per semester. But the reason I ended up in IT was not in my hands &mdash; it was pure destiny.</p>
+
+              <p>I thank and hate destiny for this 😶.</p>
+
+              <p>Fast forward to my first day of college &mdash; I was busy completing my formalities. Our HOD called me and said there was an election being conducted for CR (Class Representative). Only two guys were competing. He said this was the right time to introduce myself to the entire class in one speech and encouraged me to participate.</p>
+
+              <p>I was very scared and shy. I don’t know why, but I wrote my nomination letter and gave it to the HOD &mdash; just to look good.</p>
+
+              <p>Here comes the most important part. The elections were to be held in the 2nd half, and the candidates had to deliver a speech 😅. Literally!!! I was shivering while the other candidates looked very confident and well-prepared. One of them even whispered in my ear:<br>
+              <strong>“You made a mistake by participating in an election on your first day. This will make you a bad guy to some people, including me.”</strong> 😬</p>
+
+              <p>I had never spoken a word before in front of a crowd that size &mdash; 100+ people including classmates, teaching, and non-teaching staff. I nervously introduced myself:</p>
+
+              <blockquote>“My name is Ravi.”</blockquote>
+
+              <p>Someone from the crowd shouted, “Ithe enti?” (So what?). I smiled and continued:</p>
+
+              <blockquote>“I won’t promise you anything. I’m participating only because of the opportunity given by our HOD. I don’t know you guys, and you don’t know me. I’m not even expecting a single vote &mdash; I wouldn’t vote for myself either!” 🤣</blockquote>
+
+              <p>Some laughed. I gained a little confidence and continued, explaining my family background, my passion for tech, and a mini project I did in my Diploma.</p>
+
+              <p>I concluded:</p>
+
+              <blockquote>“You don’t have to vote for me &mdash; just vote for the person you believe is right in your view. And don’t misuse this vote like we do in real elections by looking at caste, power, etc.”</blockquote>
+
+              <p>Some staff clapped. No classmates responded. I was genuinely not expecting even a single vote &mdash; I had voted for the other guy (remember the one who threatened me?) 😎 I liked his confidence.</p>
+
+              <p>So, what do you think the result was?</p>
+
+              <p>You won’t believe it &mdash; <strong>I won</strong>! 🤣<br>
+              I didn’t believe it myself and went to the counting room. My HOD handed me a big bunch of ballots and told me to count. I literally counted and said, “51” (out of 60). The confident guy got 2 votes (one was mine 😅), the other candidate got 5, and 2 were disqualified (bad handwriting 🤣).</p>
+
+              <p>During the announcement, I was still in shock. HOD said,</p>
+
+              <blockquote>“I’ve never seen anyone win on their first day. Don’t ruin your reputation.”</blockquote>
+
+              <p>I thanked him and walked away.</p>
+
+              <p>The next day, everyone congratulated me. I remained the CR for the next 3 years. This was an achievement I never chased &mdash; I was just being genuine. I never betrayed anyone or took sides. I just followed what felt right. <em>Maybe it was just my view.</em></p>
+
+              <hr>
+
+              <p>Okay, let’s keep that aside for now.</p>
+
+              <p>I gradually became a good student during graduation because I realized technology was always evolving. I never wrote notes but always preferred textbooks over classroom material and used the PPTs given by staff. I started experimenting.</p>
+
+              <p>Here’s an example:<br>
+              While everyone else was memorizing full 250-line Java programs (e.g., inheritance), I thought &mdash;</p>
+
+              <blockquote>“Why memorize all this?”</blockquote>
+
+              <p>So I wrote a minimal version of the same program &mdash; around 20 lines &mdash; with the exact functionality.</p>
+
+              <p>A staff member refused to approve it and dragged me to the HOD’s cabin. The HOD said:</p>
+
+              <blockquote>“You have to follow the textbook and staff material.”</blockquote>
+
+              <p>I replied:</p>
+
+              <blockquote>“I’ve incorporated the same concept using simplified code.”</blockquote>
+
+              <p>The HOD said,</p>
+
+              <blockquote>“If it gives the correct result, I’ll approve it.”</blockquote>
+
+              <p>I executed it using the values he provided. It worked. ✅<br>
+              He permitted me to use my own programs. This felt like a breakthrough. I rewrote every program in my own way &mdash; minimal, functional, and efficient.</p>
+
+              <p>While my classmates’ records were over 300 pages long, mine was barely 40 🤣.<br>
+              (I even kept it at home until my mom mistakenly sold it off as scrap 🤣.)</p>
+
+              <hr>
+
+              <p>Things were going fine &mdash; and then the <strong>geek bug</strong> really bit me. While most of my classmates were preparing for software careers, I chose a different path.</p>
+
+              <p>One summer night, I was browsing torrents and came across a blog post. A guy wrote:</p>
+
+              <blockquote>“If you want deep IT knowledge, search for ‘CBT Nuggets’. Their courses are awesome.”</blockquote>
+
+              <p>He even shared download links. I remember it was <em>Pirate Bay</em>. I downloaded <strong>CCNA R&amp;S by Jeremy Cioara</strong> from CBT Nuggets.</p>
+
+              <p>OMG, what a guy. 🙌<br>
+              Hands down, the knowledge he gave me and the impact he had on me was out of this world. I became a huge fan.</p>
+
+              <p>It took me 2–3 months to complete his course, and my thought process completely changed. I wanted to learn networking more than boring programming (just my opinion back then). I went all in and even completed CCNA R&amp;S certification in 2017.</p>
+
+              <p>I believed I’d pursue a career as a network engineer or analyst. Deep inside, I knew this was my stronghold.</p>
+
+              <p>I used to tell myself every day:</p>
+
+              <blockquote><strong>“I don’t want a desk job. I want to get my hands dirty.”</strong><br>
+              That was Jeremy’s line — and it stuck with me. 🧠</blockquote>
+
+              <hr>
+
+              <p>Then came the academic project. What do you think? Did I go the usual route — buy a project for ₹5–10K and submit it?</p>
+
+              <p>🤣 I’m gonna disappoint you again. I decided to do my own project.</p>
+
+              <p>I had an idea. I always believed that a project should help someone or do some good. Here’s what I observed:<br>
+              In our labs, we constantly faced network lag, latency, and congestion. I figured &mdash; they just didn’t know how to manage it properly.</p>
+
+              <p>After completing my CCNA and starting CCNP prep, I proposed redesigning the college network infrastructure. My HOD was surprised:</p>
+
+              <blockquote>“Networking project? Can you pull this off? If not, you can back out later.”</blockquote>
+
+              <p>I said:</p>
+
+              <blockquote>“I can do it.”</blockquote>
+
+              <p>He replied:</p>
+
+              <blockquote>“Okay, I’ll be your guide. Replicate the entire design using any simulation tool.”</blockquote>
+
+              <p>I chose <strong>Cisco Packet Tracer</strong>. I conducted a site survey, replicated the existing setup, redesigned it completely, and upgraded the network from 100Mbps to 1000Mbps (1 Gigabit).</p>
+
+              <p>As suggested by my HOD, I presented the simulation. He really liked it and asked me to present to the Vice Principal. He liked it too.<br>
+              Next stop: our Chairman and college founder.</p>
+
+              <p>He listened carefully and asked:</p>
+
+              <blockquote>“How much will it cost to implement?”</blockquote>
+
+              <p>I gave him a number. He was okay with it. He congratulated me and asked for a full project document. I completed it in just a couple of days.</p>
+
+              <p>Know what?<br>
+              <strong>I completed the 6-month project in just 30 days.</strong> 😅</p>
+
+              <p>Everyone looked at me like I was some kind of alien. 👽<br>
+              That’s when I started believing in the “Evil Eye” concept. I had never believed in it before &mdash; but after what followed, I do now.</p>
+
+              <p>It's okay. I know what you’re thinking: “Was I superstitious?”</p>
+
+              <p>Nope. But I faced so many personal problems at that time &mdash; more than ever before.</p>
+
+              <p>It was one of the lowest phases of my life.</p>
+
+              <p>We all have those personal struggles we don’t talk about, right?</p>
+
+              <p>Yes, I went through that &mdash; and I believed it was a butterfly effect.</p>
+
+              <p>One bad thing happened… and that led to a chain of bad things, one after another, for years to come.</p>
+
+              <hr>
+
+              <p>I know this was long, but I just wanted to say it all without cutting the flow midway. ❤️</p>
+              <figure class="mt-6 w-full max-w-md mx-auto">
+                <img src="images/my/dc.jpeg" class="rounded-xl shadow-lg w-full" alt="Old school tech memories" />
+                <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400 italic">
+                  Hmm, this was me in 2013 during my Diploma collage time.
+                </figcaption>
+              </figure>
+          </div>
+        </details>
+  
+      </div>
+    </div>
+-->  
+    <!-- Back to Top Button -->
+    <a href="#top" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg z-50 transition-all" title="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </section>
+  
+    
+</main>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-gray-100 dark:bg-gray-900 py-20 text-center px-4 sm:px-6 lg:px-8">
+  <p class="mb-8 text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+    Want to chat, collaborate, or just say hi? Let's connect!
+  </p>
+  <div class="flex justify-center gap-6 text-gray-600 dark:text-gray-300 text-3xl">
+    <a href="https://www.instagram.com/el.professor.de.la.casa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-pink-500">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/veera-polisetti/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-blue-600">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/r-polisetti" target="_blank" rel="noopener noreferrer" aria-label="github" class="hover:text-red-500">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="mailto:rpolisetti@zohomail.in" aria-label="Email" class="hover:text-green-500">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://yourblog.com" target="_blank" rel="noopener noreferrer" aria-label="Blog" class="hover:text-purple-500">
+      <i class="fas fa-blog"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white dark:bg-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-400 px-4 sm:px-6 lg:px-8">
+  <p>&copy; 2025 Ravi Kiran Polisetti. All rights reserved.</p>
+  <p class="mt-2">
+    Built with ❤️ using 
+    <a href="https://tailwindcss.com" target="_blank" class="underline hover:text-blue-500">Tailwind CSS</a>, 
+    <a href="https://www.hyperui.dev" target="_blank" class="underline hover:text-pink-500">HyperUI</a>,
+    And My Dear Friend <span class="italic">"ChatGPT"</span> 😅😘!!
+  </p>
+</footer>
+
+<script>
+  // Hamburger toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Dark mode toggles
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+  }
+
+  document.getElementById('dark-toggle-desktop').addEventListener('click', toggleDarkMode);
+  document.getElementById('dark-toggle-mobile').addEventListener('click', toggleDarkMode);
+</script>
+</body>
+</html>
