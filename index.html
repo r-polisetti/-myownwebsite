@@ -18,20 +18,79 @@
   <link href="fonts/webfonts/*" rel="stylesheet">
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Mobile Menu Toggle
-      const menuToggle = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-  
-      if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-          menuToggle.setAttribute('aria-expanded', !isExpanded);
-          mobileMenu.classList.toggle('hidden');
-        });
-      }
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* -----------------------------
+     MOBILE MENU TOGGLE
+  ------------------------------*/
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
     });
-  </script> 
+  }
+
+
+  /* -----------------------------
+       FIXED SECTION SCROLL SYSTEM
+  ------------------------------*/
+
+  // Manually define your page sections in order
+  const sections = [
+    document.getElementById("hero"),
+    document.getElementById("story-1"),
+    document.getElementById("story"),
+    document.getElementById("contact")
+  ];
+
+  const btn = document.getElementById("scrollBtn");
+  const icon = document.getElementById("scrollIcon");
+
+  // Always recompute positions because details expand
+  function getCurrentSectionIndex() {
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+
+    let activeIndex = 0;
+
+    sections.forEach((sec, i) => {
+      if (scrollPos >= sec.offsetTop) activeIndex = i;
+    });
+
+    return activeIndex;
+  }
+
+  btn.addEventListener("click", () => {
+    const index = getCurrentSectionIndex();
+
+    if (icon.classList.contains("fa-arrow-down")) {
+      // Scroll DOWN
+      const next = sections[index + 1] || sections[0];
+      next.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Scroll UP
+      const prev = sections[index - 1] || sections[0];
+      prev.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  // Update icon on scroll
+  window.addEventListener("scroll", () => {
+    const index = getCurrentSectionIndex();
+
+    if (index === sections.length - 1) {
+      icon.className = "fas fa-arrow-up";
+    } else {
+      icon.className = "fas fa-arrow-down";
+    }
+  });
+
+});
+</script>
+
 </head>
 
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
@@ -81,22 +140,12 @@
         <img src="images/my/Profie-p.jpeg" alt="Profile" class="w-full h-full object-cover" />
       </div>
       <h1 class="text-4xl sm:text-5xl font-bold">Hi, I'm Ravi Kiran Polisetti</h1>
-      <p class="mt-4 text-lg sm:text-2xl leading-relaxed">
-        💡 Technology Enthusiast, 📖 Forever Learner,<br />
-        🚶‍♂️ Always Moving Forward — One step, One idea At A Time.
+      <p class="mt-4 text-xs sm:text-sm text-white-300">
+        Thanks for visiting my website 🌐 
+        I created this space to share my journey from a scared little IT nerd from a tiny town to a IT professional 🚀
+        Every IT person has a story, and this is mine.
+        So, welcome to my tiny corner of the internet ☕✨.
       </p>
-      <p class="mt-4 text-base sm:text-xl text-gray-300">
-        Thanks for checking out my corner of the web — scroll down to learn my story.
-      </p>
-    </div>
-
-    <a
-      href="#story-1"
-      class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 text-white hover:text-blue-400 transition"
-      aria-label="Scroll down to About Me section"
-    >
-      <i class="fas fa-chevron-down text-3xl animate-bounce"></i>
-    </a>
   </section>
 
   <!-- About Me Section -->
@@ -115,16 +164,20 @@
     <div class="w-full md:w-1/2 text-center md:text-left max-w-xl">
       <h2 class="text-2xl sm:text-3xl font-bold mb-4">👋 About Me:</h2>
       <div class="text-base sm:text-lg font-medium space-y-4 leading-relaxed">
-        <p>I’m a tech lover, a believer in open-source, and a quiet supporter of the freedom it stands for.</p>
-        <p>I’ve made a habit of learning at least one new thing every day — a thought, a truth.</p>
-        <p>I’m not the person you see now — I’m the one I shaped myself into, slowly, painfully, deliberately.</p>
-        <p>It wasn’t smooth. I’ve stumbled, fallen, and rebuilt — carving my way forward, one stone at a time.</p>
-        <p>This website isn’t just a page — it’s a bookmark in the journey. A place to pause, reflect, and remember how far I’ve come.</p>
-        <p>And I know — there’s still a long road ahead. But I’ll keep updating this space, as long as I keep growing.</p>
-        <p>If you're curious about the path I've walked — scroll down and take a look.</p>
+        <p> Hey there! I'm just a simple IT guy wandering around the digital universe 💻✨. Honestly, I think I was *born* for this messing up with technology, breaking things, fixing them 😅🔧.<br><br>
+
+          I’m definitely not the person you see today. I’ve been through moments where I stare at the screen questioning all my life choices.<br><br>
+          
+          I thought I needed a place to store and share all these adventures, failures, victories, and “oops” moments… and boom, this happened. Tomorrow I may or may not be around, but my journey will live here forever or at least until AI(like SKYNET from terminator movie) takes over this world 🫠💾.<br><br>
+          
+          I’ve organized them like movie chapters 🎬🍿 Each chapter goes through a different phase of my life the important ones, the funny ones, the painful ones, and the “I should’ve known better” ones 😂.
+          
+          So welcome to my journey. Buckle up. It gets weird… in a good way. 😎🚀<br>
+          
+        </p>
       </div>
     </div>
-    </section>
+  </section>
 
   <section id="story" class="relative bg-white dark:bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 scroll-mt-20">
     <div class="max-w-4xl mx-auto">
@@ -224,7 +277,7 @@
                 <p>Three years of college passed. And with that, I was given a break — a chance to rethink who I really wanted to be.</p>
   
               <figure class="mt-6 w-full max-w-md mx-auto">
-                <img src="images/my/child.jpeg" class="rounded-xl shadow-lg w-full" alt="Old school tech memories" />
+                <img src="images/my/dc.jpeg" class="rounded-xl shadow-lg w-full" alt="Old school tech memories" />
                 <figcaption class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400 italic">
                   Yah, that's me — a 2-year-old. 😅
                 </figcaption>
@@ -483,17 +536,9 @@
                 </figure>      
               </div>
             --> 
-            </details>
-    
-    
+          </details>  
     </div>
-  </section>
-  
-
-  <!-- Back to Top Button -->
-  <a href="#top" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg z-50 transition-all" title="Back to Top">
-    <i class="fas fa-arrow-up"></i>
-  </a>
+  </section> 
 </main>
 
 <!-- Contact Section -->
@@ -520,6 +565,11 @@
   </div>
 </section>
 
+<button id="scrollBtn"
+class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg z-50 transition-all">
+  <i id="scrollIcon" class="fas fa-arrow-down"></i>
+</button>
+
 <!-- Footer -->
 <footer class="bg-white dark:bg-gray-800 py-6 text-center text-sm text-gray-500 dark:text-gray-400 px-4 sm:px-6 lg:px-8">
   <p>&copy; 2025 Ravi Kiran Polisetti. All rights reserved.</p>
@@ -530,6 +580,5 @@
     And My Dear Friend <span class="italic">"ChatGPT"</span> 😅😘!!
   </p>
 </footer>
-
 </body>
 </html>
